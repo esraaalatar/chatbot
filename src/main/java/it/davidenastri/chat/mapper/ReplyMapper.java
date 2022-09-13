@@ -11,6 +11,7 @@ import java.util.List;
 public interface ReplyMapper {
     @Select("SELECT * FROM REPLY")
     List<Reply> getReplies();
+
     @Select("SELECT * FROM REPLY where replyid =#{id} ")
     List<Reply> getRepliesByIntentId(@Param("id") int id);
 }

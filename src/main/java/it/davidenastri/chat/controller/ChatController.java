@@ -28,7 +28,7 @@ public class ChatController {
     @GetMapping
     public String getChatPage(ChatForm chatForm, Model model) {
         model.addAttribute("chatMessages", this.messageService.getChatMessages());
-        if(this.messageService.getChatMessages().size()>0) {
+        if (this.messageService.getChatMessages().size() > 0) {
             int msgId = this.messageService.getMessagesId(chatForm.getMessageText());
             model.addAttribute("chatReplies", this.messageService.getChatReplies(msgId));
         }
@@ -48,8 +48,8 @@ public class ChatController {
     }
 
     @ModelAttribute("allMessageTypes")
-    public String[] allMessageTypes () {
-        return new String[] { "Say", "Shout", "Whisper" };
+    public String[] allMessageTypes() {
+        return new String[]{"Say", "Shout", "Whisper"};
     }
 
 }
